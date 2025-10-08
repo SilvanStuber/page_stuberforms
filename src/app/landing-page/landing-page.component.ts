@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -9,17 +10,17 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit, OnDestroy {
 
+  dataService = inject(DataService);
+
   typedText = '';
 
-  // Reihenfolge wichtig: startet mit "Herzlich willkommen."
   private phrases: string[] = [
     'Herzlich willkommen!',
-    '3D-Druck & IT-Services',
+    '3D-Druck & IT-Services.',
     '3D-Druck: Lassen Sie Ihren Prototypen drucken.',
     'Wir bringen Ihre Idee von der Zeichnung in eine anfassbare Form.',
     'Wir bauen die passende Landingpage für Ihr Angebot.',
-    'Fragen zu Windows – Bluescreens, Startfehlern, Performance?',
-    'Professionelle Webseiten, die begeistern.',
+    'Fragen zu Windows, Bluescreens, Startfehlern, Performance?',
     'Bei uns sind Sie in besten Händen.',
     'Einfach kostenlosen Kostenvoranschlag anfordern!'
   ];
