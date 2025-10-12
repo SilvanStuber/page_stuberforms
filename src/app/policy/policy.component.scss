@@ -1,0 +1,134 @@
+.policy-content {
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+#jmdcontent h1,
+#jmdcontent h2,
+#jmdcontent h3,
+#jmdcontent h4,
+#jmdcontent h5,
+#jmdcontent h6 {
+  margin: 1.5em 0 1em 0;
+}
+
+#jmdcontent {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+#jmdcontent a {
+  word-break: break-word;
+}
+
+#jmdcontent code {
+  background-color: #f5f5f5;
+  color: #bd4147;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  display: inline-block;
+  border-radius: 3px;
+  white-space: pre-wrap;
+  font-size: 85%;
+  font-weight: 900;
+}
+
+#jmdcontent code:after,
+#jmdcontent code:before {
+  content: "\A0";
+  letter-spacing: -1px;
+}
+
+#jmdcontent table {
+  border: solid 1px #eeeeee;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 0.9em;
+  line-height: normal;
+}
+
+#jmdcontent table thead th {
+  background-color: #efefef;
+  padding: 10px;
+  text-align: left;
+  color: black;
+  margin: revert;
+  width: revert;
+  height: revert;
+}
+
+#jmdcontent table tbody td {
+  border: solid 1px #eeeeee;
+  padding: 10px;
+}
+
+#jmdcontent .cancellation-policy,
+#jmdcontent .jmd-bordered {
+  border: solid 1px;
+  padding: 0em 1em;
+}
+
+#jmdcontent ol {
+  counter-reset: item;
+}
+
+#jmdcontent ol > li {
+  display: block;
+}
+
+#jmdcontent li {
+  list-style-position: outside !important;
+}
+
+#jmdcontent ol > li > *:first-child:before {
+  content: counters(item, ".") ". ";
+  counter-increment: item;
+}
+
+@media (max-width: 1600px) {
+  #jmdcontent table,
+  #jmdcontent thead,
+  #jmdcontent tbody,
+  #jmdcontent tfoot,
+  #jmdcontent tr,
+  #jmdcontent th,
+  #jmdcontent td {
+    display: block;
+  }
+
+  #jmdcontent thead tr,
+  #jmdcontent tfoot tr > th {
+    display: none;
+  }
+
+  #jmdcontent tr {
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+  }
+
+  #jmdcontent tr:last-child {
+    margin-bottom: 0;
+  }
+
+  #jmdcontent table tbody td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    white-space: normal;
+    text-align: left;
+    padding: 5px 10px 5px calc(30% + 20px);
+  }
+
+  #jmdcontent table tbody td:before {
+    content: attr(data-header);
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 30%;
+    padding: 5px 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+}
