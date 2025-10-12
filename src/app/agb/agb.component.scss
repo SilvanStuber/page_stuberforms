@@ -1,0 +1,70 @@
+.agb-container {
+  padding-top: 160px;
+  padding-bottom: 80px;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0 1rem 1rem;
+  list-style: none;
+}
+.main-nav a {
+  color: #0b2030;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0.25rem 0 1rem;
+}
+h2 {
+  font-size: 1.25rem;
+  margin: 1.75rem 0 0.25rem;
+}
+h3 {
+  font-size: 1.05rem;
+  margin: 1rem 0 0.25rem;
+}
+.meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.blockquote {
+  border-left: 4px solid var(--brand);
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  color: #0d2135;
+}
+ul {
+  padding-left: 1.2rem;
+}
+li {
+  margin: 0.25rem 0;
+}
+.footnote {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-footer {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 2rem 0 3rem;
+}
+
+.policy-links {
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.policy-links:hover {
+  color: #f66759;
+}

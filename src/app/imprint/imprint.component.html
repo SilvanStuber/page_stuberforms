@@ -1,1 +1,52 @@
-<p>imprint works!</p>
+<header class="container-1440 header-container">
+  <div class="container-1440">
+    <img
+      (click)="dataService.goToHome()"
+      class="logo-img"
+      src="logo-stuberforms.png"
+      alt="STUBERFORMS Logo"
+    />
+  </div>
+  <div class="container-1440 container-nav-links">
+    <div class="nav-links">
+      <p (click)="dataService.goTo3dDruck()">3D Druck</p>
+      <p (click)="dataService.goToIt()">IT-Services</p>
+      <p (click)="dataService.openExternal('https://dev.stuberforms.ch/')">
+        Weblösungen
+      </p>
+      <p (click)="dataService.goToAbout()">Über uns</p>
+      <p (click)="dataService.goToContact()">Kontakt</p>
+    </div>
+  </div>
+</header>
+
+<div class="impressum-container">
+  <a class="back-arrow-container"><div></div></a>
+  <div class="impressum-content-container">
+    <h1>Impressum</h1>
+    <p>
+      Stuber Forms<br />
+      Bernstrasse 46<br />
+      3267 Seedorf
+    </p>
+    <h2>Kontakt</h2>
+    <a class="imprint-links" href="mailto:info@stuberforms.ch"
+      >E-Mail: info&#64;stuberforms.ch</a
+    >
+  </div>
+</div>
+
+<footer class="container-1440 footer-container">
+  <p (click)="dataService.goToImprint()">Impressum</p>
+  <p (click)="dataService.goToAGB()">AGB</p>
+  <p (click)="dataService.goToPolicy()">Datenschutz</p>
+  <p (click)="dataService.goToContact()">Kontakt</p>
+  <p
+    role="link"
+    tabindex="0"
+    class="clickable"
+    (click)="dataService.openExternal('https://www.instagram.com/stuberforms/')"
+  >
+    Instagram
+  </p>
+</footer>

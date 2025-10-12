@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-policy',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './policy.component.scss'
 })
 export class PolicyComponent {
-
+  dataService = inject(DataService);
 }

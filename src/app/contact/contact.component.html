@@ -11,8 +11,26 @@
     <div class="nav-links">
       <p (click)="dataService.goTo3dDruck()">3D Druck</p>
       <p (click)="dataService.goToIt()">IT-Services</p>
+      <p (click)="dataService.openExternal('https://dev.stuberforms.ch/')">
+        Weblösungen
+      </p>
       <p (click)="dataService.goToAbout()">Über uns</p>
       <p (click)="dataService.goToContact()">Kontakt</p>
     </div>
   </div>
 </header>
+
+<footer class="container-1440 footer-container">
+  <p (click)="dataService.goToImprint()">Impressum</p>
+  <p (click)="dataService.goToAGB()">AGB</p>
+  <p (click)="dataService.goToPolicy()">Datenschutz</p>
+  <p (click)="dataService.goToContact()">Kontakt</p>
+  <p
+    role="link"
+    tabindex="0"
+    class="clickable"
+    (click)="dataService.openExternal('https://www.instagram.com/stuberforms/')"
+  >
+    Instagram
+  </p>
+</footer>

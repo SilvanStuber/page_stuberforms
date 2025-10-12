@@ -1,1 +1,292 @@
-<p>agb works!</p>
+<header class="container-1440 header-container">
+  <div class="container-1440">
+    <img
+      (click)="dataService.goToHome()"
+      class="logo-img"
+      src="logo-stuberforms.png"
+      alt="STUBERFORMS Logo"
+    />
+  </div>
+  <div class="container-1440 container-nav-links">
+    <div class="nav-links">
+      <p (click)="dataService.goTo3dDruck()">3D Druck</p>
+      <p (click)="dataService.goToIt()">IT-Services</p>
+      <p (click)="dataService.openExternal('https://dev.stuberforms.ch/')">
+        Weblösungen
+      </p>
+      <p (click)="dataService.goToAbout()">Über uns</p>
+      <p (click)="dataService.goToContact()">Kontakt</p>
+    </div>
+  </div>
+</header>
+
+<main class="container-1440 agb-container">
+  <article class="doc">
+    <h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
+    <p class="meta">
+      Gültig ab: <strong>12.10.2025</strong> – Version <strong>1.0</strong
+      ><br />
+      Anbieter: <strong>Stuber Forms, Einzelunternehmen</strong>, Bernstrasse
+      46, 3267 Seedorf BE, Schweiz<br />
+      UID: <strong>CHE-168.572.445</strong>
+      <br />
+      E-Mail: <strong>info&#64;stuberforms.ch</strong>
+    </p>
+
+    <section>
+      <h2>1. Geltungsbereich</h2>
+      <p>
+        Diese AGB regeln Abschluss, Inhalt und Abwicklung von Verträgen zwischen
+        Stuber Forms (nachfolgend «Anbieter») und Kundinnen/Kunden (nachfolgend
+        «Kunde») für Leistungen in den Bereichen 3D-Druck, Lasertechnik,
+        Informationstechnologie (insbesondere Softwareentwicklung,
+        Systembetreuung, PC-Support, Beratung) sowie Weblösungen (z. B.
+        Landingpages). Abweichende Bedingungen gelten nur, wenn sie schriftlich
+        bestätigt sind.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Unternehmensgegenstand (Handelsregister)</h2>
+      <p class="blockquote">
+        Erbringung von Dienstleistungen in den Bereichen 3D-Druck und
+        Lasertechnik sowie Erbringung von Dienstleistungen im Bereich der
+        Informationstechnologie, insbesondere Entwicklung von Software,
+        Systembetreuung, PC-Support und Beratung.
+      </p>
+    </section>
+
+    <section>
+      <h2>3. Leistungen</h2>
+      <h3>3.1 3D-Druck & Lasertechnik</h3>
+      <ul>
+        <li>
+          Prototypen- und Kleinseriendruck nach bereitgestellten
+          Vorlagen/3D-Modellen
+        </li>
+        <li>Unterstützung von der Zeichnung bis zum greifbaren Modell</li>
+        <li>
+          Optionale Nachbearbeitung (z. B. Schleifen, Verkleben, Lackieren) nach
+          Vereinbarung
+        </li>
+      </ul>
+      <h3>3.2 IT-Services</h3>
+      <ul>
+        <li>
+          Beratung, Fehleranalyse (Windows, Bluescreens, Startprobleme,
+          Performance)
+        </li>
+        <li>
+          Systembetreuung, PC-/Notebook-Support, Einrichtung und Migration
+        </li>
+        <li>Softwareentwicklung und Automatisierung</li>
+      </ul>
+      <h3>3.3 Weblösungen</h3>
+      <ul>
+        <li>Konzeption und Erstellung von Landingpages und kleinen Websites</li>
+        <li>Grundlegende Suchmaschinen- und Performance-Optimierung</li>
+        <li>Deployment/Hosting nach Absprache</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Angebot, Offerte und Vertragsschluss</h2>
+      <p>
+        Anfragen sind unverbindlich. Der Anbieter erstellt auf Wunsch eine
+        kostenlose Offerte. Ein Vertrag kommt durch schriftliche Bestätigung
+        (E-Mail genügt), Online-Buchung oder Auftragsbestätigung zustande.
+        Offerten gelten, sofern nicht anders vermerkt, 14 Tage. Technische
+        Änderungen oder fehlende Angaben können eine Anpassung des Preises nach
+        sich ziehen.
+      </p>
+    </section>
+
+    <section>
+      <h2>5. Mitwirkungspflichten des Kunden</h2>
+      <ul>
+        <li>
+          Rechtzeitige Bereitstellung aller nötigen Informationen, Daten,
+          Vorlagen und Zugriffe
+        </li>
+        <li>
+          Sicherstellung der Nutzungsrechte an übersandten
+          Dateien/Marken/Inhalten
+        </li>
+        <li>Termingerechte Prüfung und Abnahme von Zwischenergebnissen</li>
+        <li>
+          Bei IT-Support: Datensicherung vor Eingriffen, sofern nicht anders
+          vereinbart
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6. Preise, Spesen und Zahlung</h2>
+      <p>
+        Sofern nicht anders vereinbart, gelten die in der Offerte genannten
+        Preise zuzüglich allfälliger Spesen (z. B. Versand, Material, Lizenzen).
+        Preise werden netto in CHF ausgewiesen. Zahlung innert 30 Tage nach
+        Rechnungserhalt ohne Abzug. Bei längeren Projekten können Teilrechnungen
+        gestellt werden. Zahlungsverzug: 5 % Verzugszins p. a. ab Fälligkeit.
+      </p>
+    </section>
+
+    <section>
+      <h2>7. Lieferung, Versand und Abnahme (3D-Druck)</h2>
+      <p>
+        Liefertermine sind Richtwerte, sofern nicht fix zugesagt. Versand
+        erfolgt auf Risiko des Kunden. Mit Übergabe/Versand gilt die Leistung
+        als geliefert. Der Kunde prüft die Ware innert 5 Werktagen und meldet
+        Mängel schriftlich. Ohne Meldung gilt die Lieferung als genehmigt.
+      </p>
+    </section>
+
+    <section>
+      <h2>8. Rücktritt / Annullation durch den Kunden</h2>
+      <p>
+        Ein Rücktritt ist jederzeit möglich, bedarf aber der schriftlichen
+        Mitteilung (E-Mail genügt). Der Anbieter behält sich vor, bereits
+        angefallene Aufwände und Kosten in Rechnung zu stellen, insbesondere für
+        Datenaufbereitung, Modellprüfung, Slicing, technische Vorbereitung,
+        Kalibrierung, Testdrucke, Rüstzeiten, Materialkosten, Versand/Verpackung
+        sowie Fremdleistungen.
+      </p>
+      <p>
+        Wurde der Druck- oder Produktionsprozess bereits gestartet, werden die
+        bis dahin entstandenen Aufwände vollumfänglich verrechnet. Bereits
+        gelieferte (Teil-)Leistungen gelten als abgenommen und sind zu bezahlen.
+      </p>
+      <p>
+        Der Kunde nimmt zur Kenntnis, dass geringfügige Abweichungen in Farbe,
+        Oberflächenstruktur, Masshaltigkeit oder Festigkeit bei additiven
+        Fertigungsverfahren (3D-Druck) technisch bedingt sind und keinen Mangel
+        im Sinne des Obligationenrechts darstellen. Ebenso kann bei Natur- oder
+        Spezialmaterialien keine absolute Gleichmässigkeit garantiert werden.
+      </p>
+    </section>
+
+    <section>
+      <h2>9. Gewährleistung und Haftung</h2>
+      <p>
+        Mängel sind unverzüglich, spätestens innert 5 Werktagen nach
+        Lieferung/Abnahme schriftlich zu rügen. Bei berechtigter Mängelrüge
+        erfolgt nach Wahl des Anbieters Nachbesserung oder Ersatzlieferung.
+        Weitergehende Ansprüche sind im gesetzlich zulässigen Umfang
+        ausgeschlossen. Für indirekte Schäden, entgangenen Gewinn, Datenverlust
+        oder Folgeschäden wird keine Haftung übernommen. Gesetzliche Haftung bei
+        Vorsatz und grober Fahrlässigkeit bleibt vorbehalten.
+      </p>
+    </section>
+
+    <section>
+      <h2>10. Urheberrechte und Nutzungsrechte</h2>
+      <p>
+        Sämtliche Rechte an vom Anbieter geschaffenen Entwürfen, Designs,
+        Quellcode, Modellen und Dokumentationen verbleiben bis zur vollständigen
+        Bezahlung beim Anbieter. Nutzungsrechte gehen erst nach Zahlung über.
+        Vorlagen des Kunden dürfen nur verwendet werden, sofern der Kunde die
+        Rechte besitzt; er hält den Anbieter diesbezüglich schadlos.
+      </p>
+    </section>
+
+    <section>
+      <h2>11. Datenschutz (DSG)</h2>
+      <p>
+        Der Anbieter verarbeitet Personendaten gemäss schweizerischem
+        Datenschutzrecht (DSG) ausschliesslich zur Vertragserfüllung, Angebots-
+        und Projektabwicklung sowie zur Kommunikation. Es werden nur notwendige
+        Daten erhoben und soweit erforderlich an Dienstleister (z. B.
+        Hosting/Versand) übermittelt. Betroffene haben die gesetzlichen Rechte
+        auf Auskunft, Berichtigung und Löschung. Details finden sich in der
+        separaten Datenschutzerklärung.
+      </p>
+      <p (click)="dataService.goToPolicy()" class="policy-links">
+        Datenschutz Stuber Forms
+      </p>
+    </section>
+
+    <section>
+      <h2>12. Vertraulichkeit</h2>
+      <p>
+        Beide Parteien behandeln nicht öffentlich bekannte Informationen
+        vertraulich. Dies gilt insbesondere für technische Unterlagen,
+        Zeichnungen, Quellcode, Modelle und Geschäftsdaten.
+      </p>
+    </section>
+
+    <section>
+      <h2>13. Referenzen</h2>
+      <p>
+        Der Anbieter darf den Kundennamen und das Projekt in Referenzlisten und
+        auf der Website erwähnen, sofern der Kunde dem nicht schriftlich
+        widerspricht.
+      </p>
+    </section>
+
+    <section>
+      <h2>14. Eigentumsvorbehalt</h2>
+      <p>
+        Gelieferte Waren bleiben bis zur vollständigen Bezahlung Eigentum des
+        Anbieters.
+      </p>
+    </section>
+
+    <section>
+      <h2>15. Laufzeit und Kündigung bei wiederkehrenden Services</h2>
+      <p>
+        Bei periodischen Leistungen (z. B. Wartung/Hosting) gilt, sofern nicht
+        anders vereinbart, eine Mindestlaufzeit von 12 Monaten und eine
+        Kündigungsfrist von 30 Tagen zum Ende der Laufzeit. Ohne fristgerechte
+        Kündigung verlängert sich der Vertrag automatisch um weitere 12 Monate.
+      </p>
+    </section>
+
+    <section>
+      <h2>16. Höhere Gewalt</h2>
+      <p>
+        Bei Ereignissen ausserhalb der Kontrolle einer Partei (höhere Gewalt)
+        entfallen deren Leistungspflichten für die Dauer der Beeinträchtigung;
+        Fristen verlängern sich angemessen.
+      </p>
+    </section>
+
+    <section>
+      <h2>17. Rechtswahl und Gerichtsstand</h2>
+      <p>
+        Es gilt ausschliesslich schweizerisches Recht unter Ausschluss des
+        Kollisionsrechts. Zwingende Konsumentenschutzbestimmungen bleiben
+        vorbehalten. Gerichtsstand ist Seedorf (BE) bzw. der gesetzlich
+        zuständige Gerichtsstand.
+      </p>
+    </section>
+
+    <section>
+      <h2>18. Schlussbestimmungen</h2>
+      <p>
+        Der Anbieter kann diese AGB anpassen; es gilt die jeweils aktuelle
+        Version zum Zeitpunkt des Vertragsschlusses. Sollte eine Bestimmung
+        unwirksam sein, bleibt die Wirksamkeit der übrigen unberührt.
+      </p>
+    </section>
+
+    <footer class="footnote">
+      Kontakt: Stuber Forms, Bernstrasse 46, 3267 Seedorf BE, Schweiz · E-Mail:
+      info&#64;stuberforms.ch
+    </footer>
+  </article>
+</main>
+
+<footer class="container-1440 footer-container">
+  <p (click)="dataService.goToImprint()">Impressum</p>
+  <p (click)="dataService.goToAGB()">AGB</p>
+  <p (click)="dataService.goToPolicy()">Datenschutz</p>
+  <p (click)="dataService.goToContact()">Kontakt</p>
+  <p
+    role="link"
+    tabindex="0"
+    class="clickable"
+    (click)="dataService.openExternal('https://www.instagram.com/stuberforms/')"
+  >
+    Instagram
+  </p>
+</footer>

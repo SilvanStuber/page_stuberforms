@@ -16,6 +16,7 @@ video {
 }
 
 html {
+  scroll-behavior: smooth;
   background: linear-gradient(
       112deg,
       rgba(255, 255, 255, 0.36) 0%,
@@ -139,7 +140,7 @@ app-root,
 }
 
 .header-container {
-  position: sticky;
+  position: absolute;
   top: 0;
   z-index: 1000;
   width: 100%;
@@ -147,7 +148,6 @@ app-root,
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding-bottom: 80px;
 }
 
 .logo-img {
