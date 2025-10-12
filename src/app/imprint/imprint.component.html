@@ -1,23 +1,20 @@
-<header class="container-1440 header-container">
-  <div class="container-1440">
-    <img
-      (click)="dataService.goToHome()"
-      class="logo-img"
-      src="logo-stuberforms.png"
-      alt="STUBERFORMS Logo"
-    />
-  </div>
-  <div class="container-1440 container-nav-links">
-    <div class="nav-links">
-      <p (click)="dataService.goTo3dDruck()">3D Druck</p>
-      <p (click)="dataService.goToIt()">IT-Services</p>
-      <p (click)="dataService.openExternal('https://dev.stuberforms.ch/')">
-        Weblösungen
-      </p>
-      <p (click)="dataService.goToAbout()">Über uns</p>
-      <p (click)="dataService.goToContact()">Kontakt</p>
-    </div>
-  </div>
+<header class="header-container container-1440">
+  <img
+    (click)="dataService.goToHome()"
+    class="logo-img"
+    src="logo-stuberforms.png"
+    alt="STUBERFORMS Logo"
+  />
+
+  <nav class="nav-links">
+    <p (click)="dataService.goTo3dDruck()">3D Druck</p>
+    <p (click)="dataService.goToIt()">IT-Services</p>
+    <p (click)="dataService.openExternal('https://dev.stuberforms.ch/')">
+      Weblösungen
+    </p>
+    <p (click)="dataService.goToAbout()">Über uns</p>
+    <p (click)="dataService.goToContact()">Kontakt</p>
+  </nav>
 </header>
 
 <div class="impressum-container container-1440">

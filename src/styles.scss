@@ -75,7 +75,7 @@ html::after {
 body {
   max-width: 1440px;
   margin-inline: auto;
-  min-height: 100dvh;
+  min-height: 100vh;
   padding-inline: clamp(16px, 3vw, 32px);
   position: relative;
   z-index: 1;
@@ -114,7 +114,6 @@ a:hover {
 
 .container {
   max-width: 1440px;
-  margin-inline: auto;
   padding-inline: clamp(16px, 3vw, 32px);
 }
 
@@ -135,16 +134,21 @@ app-root,
   background: transparent !important;
 }
 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .container-1440 {
   max-width: 1440px;
-  margin-inline: 0;
 }
 
 .header-container {
   position: absolute;
   top: 0;
+  left: 18px;
+  right: 18px;
   z-index: 1000;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -152,8 +156,20 @@ app-root,
 }
 
 .logo-img {
+  display: block;
   height: 120px;
-  margin-left: -6px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links p {
+  margin: 0;
   cursor: pointer;
 }
 
@@ -184,8 +200,9 @@ app-root,
 .footer-container {
   position: absolute;
   bottom: 0;
+  left: 18px;
+  right: 18px;
   z-index: 1000;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;

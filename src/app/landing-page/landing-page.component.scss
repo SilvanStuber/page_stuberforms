@@ -1,6 +1,13 @@
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .hero__title {
   position: relative;
-  top: 14vh;
   z-index: 1;
   font-size: clamp(2.5rem, 5vw, 6rem);
   font-weight: 800;
