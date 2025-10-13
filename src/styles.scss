@@ -218,3 +218,30 @@ app-root,
     color: #f66759;
   }
 }
+
+@media (max-width: 900px) {
+  .logo-img {
+    height: 80px;
+    margin-left: -8px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .footer-container {
+    gap: 0.7rem;
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    gap: 0.5rem;
+    p {
+      font-size: 12px;
+    }
+  }
+}

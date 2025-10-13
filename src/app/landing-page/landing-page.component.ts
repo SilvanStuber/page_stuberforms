@@ -26,10 +26,10 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   ];
 
   // Einstellungen
-  private typeSpeed = 45;         // ms pro Zeichen
+  private typeSpeed = 50;         // ms pro Zeichen
   private deleteSpeed = 22;       // ms pro Zeichen beim Loeschen
-  private holdTime = 5000;        // 5 Sekunden Pause, wenn Satz fertig
-  private betweenPause = 400;     // kurze Verschnaufpause vor dem Loeschen
+  private holdTime = 2500;        // 5 Sekunden Pause, wenn Satz fertig
+  private betweenPause = 300;     // kurze Verschnaufpause vor dem Loeschen
 
   private idx = 0;
   private charIndex = 0;
