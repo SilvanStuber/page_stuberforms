@@ -197,12 +197,112 @@ app-root,
   }
 }
 
+.mobile-nav {
+  margin-top: 24px;
+  z-index: 1200;
+}
+
+.burger-button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1300;
+  width: 54px;
+  height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  color: #0d131c;
+  transition: color 200ms ease;
+
+  &:focus-visible {
+    box-shadow: 0 0 0 3px rgba(#f66759, 0.35);
+    border-radius: 10px;
+  }
+
+  span {
+    display: block;
+    width: 42px;
+    height: 2px; /* wenn es „krisselt“: auf 3px erhöhen */
+    background: currentColor;
+    border-radius: 1px;
+    transition: transform 250ms ease, opacity 200ms ease, width 200ms ease;
+  }
+
+  &.active {
+    color: #f66759;
+    span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+      width: 0%;
+    }
+    span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+}
+
+.mobile-menu-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  z-index: 900;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  p {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  p:hover {
+    color: #f66759;
+  }
+  &.open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
 .footer-container {
   position: absolute;
   bottom: 0;
   left: 18px;
   right: 18px;
-  z-index: 1000;
+  z-index: 800;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -234,6 +334,16 @@ app-root,
     p {
       font-size: 14px;
     }
+  }
+}
+
+@media (min-width: 900px) {
+  .mobile-nav {
+    display: none;
+  }
+
+  .mobile-menu-container {
+    display: none;
   }
 }
 

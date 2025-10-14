@@ -15,7 +15,32 @@
     <p (click)="dataService.goToAbout()">Über uns</p>
     <p (click)="dataService.goToContact()">Kontakt</p>
   </nav>
+
+  <nav *ngIf="dataService.isMenuOpen" class="mobile-nav">
+    <button
+      class="burger-button"
+      type="button"
+      aria-label="Menü"
+      [attr.aria-expanded]="dataService.open"
+      [class.active]="dataService.open"
+      (click)="dataService.toggle()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 </header>
+
+<div
+  class="mobile-menu-container"
+  [class.open]="dataService.isMenuOpen && dataService.open"
+>
+  <p (click)="dataService.goTo3dDruck(); dataService.toggle()">3D Druck</p>
+  <p (click)="dataService.goToIt(); dataService.toggle()">IT-Services</p>
+  <p (click)="dataService.goToAbout(); dataService.toggle()">Über uns</p>
+  <p (click)="dataService.goToContact(); dataService.toggle()">Kontakt</p>
+</div>
 
 <section
   id="content-3ddruck"

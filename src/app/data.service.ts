@@ -1,4 +1,4 @@
-import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -8,6 +8,15 @@ import { isPlatformBrowser } from '@angular/common';
 export class DataService {
 
   constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: Object) { }
+  open = false;
+  isMenuOpen = true;
+
+  @Output() toggled = new EventEmitter<boolean>();
+
+  toggle() {
+    this.open = !this.open;
+    this.toggled.emit(this.open);
+  }
 
   goTo3dDruck() {
     this.router.navigate(['/3d-druck']);
