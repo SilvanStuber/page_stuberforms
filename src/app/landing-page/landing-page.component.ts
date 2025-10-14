@@ -7,13 +7,18 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.scss'
+  styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit, OnDestroy {
 
   dataService = inject(DataService);
 
   typedText = '';
+
+  // Double-Buffer für Crossfade
+  imgA = '';
+  imgB = '';
+  showA = true; // steuert, welches Bild sichtbar ist
 
   private phrases: string[] = [
     'Herzlich willkommen!',
@@ -26,27 +31,43 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     'Einfach kostenlosen Kostenvoranschlag anfordern!'
   ];
 
-  // Einstellungen
-  private typeSpeed = 50;         // ms pro Zeichen
-  private deleteSpeed = 22;       // ms pro Zeichen beim Loeschen
-  private holdTime = 2500;        // 5 Sekunden Pause, wenn Satz fertig
-  private betweenPause = 300;     // kurze Verschnaufpause vor dem Loeschen
+  private imageFiles: string[] = [
+    'hero-01-willkommen.png',
+    'hero-02-3d-it-services.png',
+    'hero-03-prototyp.png',
+    'hero-04-idee-zu-form.png',
+    'hero-05-landingpage.png',
+    'hero-06-windows-support.png',
+    'hero-07-beste-haende.png',
+    'hero-08-kostenvoranschlag.png'
+  ];
 
-  private idx = 0;
-  private charIndex = 0;
+  // Geschwindigkeiten
+  private typeSpeed = 50;
+  private deleteSpeed = 50;
+  private holdTime = 2500;
+  private betweenPause = 300;
+
+  private idx = 0;          // Index der Phrase / des Bilds
+  private charIndex = 0;    // Schreibfortschritt
   private isDeleting = false;
-  private raf?: number;               // optional, falls man per rAF steuern moechte
-  private timer?: any;                // setTimeout / setInterval Handle
+  private timer?: any;
   private destroyed = false;
 
+  // Crossfade-Dauer muss zur CSS-Transition passen
+  private readonly fadeMs = 1200;
+
   ngOnInit(): void {
+    this.imgA = this.imageFiles[0];
+    this.imgB = this.imageFiles[1] ?? this.imageFiles[0];
+    this.showA = true; // imgA zuerst sichtbar
+    this.preloadImages(this.imageFiles);
     this.startTypingLoop();
   }
 
   ngOnDestroy(): void {
     this.destroyed = true;
     if (this.timer) clearTimeout(this.timer);
-    cancelAnimationFrame(this.raf ?? 0);
   }
 
   private startTypingLoop() {
@@ -58,28 +79,30 @@ export class LandingPageComponent implements OnInit, OnDestroy {
       this.charIndex++;
 
       if (this.charIndex === current.length) {
-        // Satz fertig -> 5s halten, dann Loeschen starten
+        // komplette Phrase kurz halten
         this.timer = setTimeout(() => {
           this.isDeleting = true;
           this.scheduleNext(this.deleteSpeed);
         }, this.holdTime);
         return;
       }
-
       this.scheduleNext(this.typeSpeed);
     } else {
-      // loeschen
+      // löschen
       this.typedText = current.slice(0, Math.max(0, this.charIndex - 1));
       this.charIndex--;
 
       if (this.charIndex === 0) {
-        // kurzer Stopp, dann naechster Satz
+        // *** HIER ist der Synchronisationspunkt ***
+        // Wechsel auf nächste Phrase und *sofort* Bild-Crossfade starten
         this.isDeleting = false;
         this.idx = (this.idx + 1) % this.phrases.length;
+        this.crossfadeTo(this.imageFiles[this.idx]);
+
+        // kleine Atempause vor dem neuen Tippen
         this.timer = setTimeout(() => this.scheduleNext(this.typeSpeed), this.betweenPause);
         return;
       }
-
       this.scheduleNext(this.deleteSpeed);
     }
   }
@@ -87,6 +110,35 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   private scheduleNext(delay: number) {
     if (this.destroyed) return;
     this.timer = setTimeout(() => this.startTypingLoop(), delay);
+  }
+
+  /**
+   * Double-Buffer Crossfade:
+   * - befüllt das versteckte Bild
+   * - toggelt Sichtbarkeit im nächsten Frame -> sauberes Ein-/Ausblenden
+   */
+  private crossfadeTo(nextSrc: string | undefined) {
+    if (!nextSrc) return;
+
+    // Verstecktes Bild vorbereiten
+    if (this.showA) {
+      this.imgB = nextSrc;
+    } else {
+      this.imgA = nextSrc;
+    }
+
+    // Nächsten Frame abwarten, dann Sichtbarkeit umschalten -> CSS transition greift
+    requestAnimationFrame(() => {
+      this.showA = !this.showA;
+    });
+  }
+
+  private preloadImages(sources: string[]) {
+    sources.forEach(src => {
+      const img = new Image();
+      img.src = src;
+      img.decoding = 'async';
+    });
   }
 
   scrollToContent() {

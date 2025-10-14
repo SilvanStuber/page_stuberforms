@@ -56,9 +56,28 @@
       <h1 class="hero__title" aria-live="polite" aria-atomic="true">
         {{ typedText }}<span class="caret" aria-hidden="true"></span>
       </h1>
+
+      <figure class="hero__visual" aria-hidden="true">
+        <img
+          class="hero__img"
+          [class.is-visible]="showA"
+          [src]="imgA"
+          alt=""
+          decoding="async"
+          loading="eager"
+        />
+        <img
+          class="hero__img"
+          [class.is-visible]="!showA"
+          [src]="imgB"
+          alt=""
+          decoding="async"
+        />
+      </figure>
     </div>
   </section>
 </main>
+
 <footer class="container-1440 footer-container">
   <p (click)="dataService.goToImprint()">Impressum</p>
   <p (click)="dataService.goToAGB()">AGB</p>
