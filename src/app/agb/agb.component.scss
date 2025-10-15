@@ -68,3 +68,9 @@ li {
 .policy-links:hover {
   color: #f66759;
 }
+
+@media (max-width: 900px) {
+  .agb-container {
+    padding-top: 100px;
+  }
+}

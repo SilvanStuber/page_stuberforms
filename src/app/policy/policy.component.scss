@@ -132,3 +132,9 @@
     font-weight: bold;
   }
 }
+
+@media (max-width: 900px) {
+  .policy-content {
+    padding-top: 60px;
+  }
+}
