@@ -6,7 +6,9 @@ html,
 body {
   min-height: 100%;
   margin: 0;
+  overflow-x: hidden;
 }
+
 img,
 svg,
 video {
@@ -104,7 +106,7 @@ p {
 }
 
 a {
-  color: black;
+  color: #0d131c;
   text-decoration: none;
 }
 a:hover {
@@ -322,7 +324,6 @@ app-root,
 @media (max-width: 900px) {
   .logo-img {
     height: 80px;
-    margin-left: -8px;
   }
 
   .nav-links {
