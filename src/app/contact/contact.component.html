@@ -50,6 +50,137 @@
   <p (click)="dataService.goToContact(); dataService.toggle()">Kontakt</p>
 </div>
 
+<div class="contact-right-container">
+  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" novalidate>
+    <label class="sr-only" for="name">Dein Name</label>
+    <input
+      id="name"
+      appSanitizeInput
+      #name="ngModel"
+      [(ngModel)]="contactData.name"
+      name="name"
+      type="text"
+      class="contact-input contact-input-name-email"
+      [placeholder]="placeholdersName"
+      required
+      minlength="2"
+      autocomplete="name"
+      [class.input-valid]="name.valid && name.touched"
+      [class.input-invalid]="!name.valid && name.touched && !name.disabled"
+      [attr.aria-invalid]="!name.valid && name.touched && !name.disabled"
+    />
+    @if (!name.valid && name.touched && !name.disabled) {
+    <p class="field-hint field-hint-error">Bitte gib deinen Namen ein.</p>
+    }
+
+    <label class="sr-only" for="email">Deine E-Mail-Adresse</label>
+    <input
+      id="email"
+      appSanitizeInput
+      #email="ngModel"
+      [(ngModel)]="contactData.email"
+      name="email"
+      type="email"
+      inputmode="email"
+      class="contact-input contact-input-name-email"
+      [placeholder]="placeholdersEmail"
+      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+      required
+      autocomplete="email"
+      [class.input-valid]="email.valid && email.touched"
+      [class.input-invalid]="!email.valid && email.touched && !email.disabled"
+      [attr.aria-invalid]="!email.valid && email.touched && !email.disabled"
+    />
+    @if (!email.valid && email.touched && !email.disabled) {
+    <p class="field-hint field-hint-error">
+      Bitte gib eine gültige E-Mail-Adresse ein.
+    </p>
+    }
+
+    <label class="sr-only text-message" for="message">Deine Nachricht</label>
+    <textarea
+      id="message"
+      appSanitizeInput
+      #message="ngModel"
+      [(ngModel)]="contactData.message"
+      name="message"
+      class="contact-input contact-input-message"
+      [placeholder]="placeholdersMessage"
+      minlength="4"
+      maxlength="5000"
+      required
+      [class.input-valid]="message.valid && message.touched"
+      [class.input-invalid]="
+        !message.valid && message.touched && !message.disabled
+      "
+      [attr.aria-invalid]="
+        !message.valid && message.touched && !message.disabled
+      "
+    ></textarea>
+    @if (!message.valid && message.touched && !message.disabled) {
+    <p class="field-hint field-hint-error">Bitte gib eine Nachricht ein.</p>
+    }
+
+    <!-- Honeypot (unsichtbar) -->
+    <input
+      type="text"
+      name="website"
+      [(ngModel)]="contactData.website"
+      tabindex="-1"
+      autocomplete="off"
+      class="hp"
+      aria-hidden="true"
+    />
+
+    <!-- Checkbox -->
+    <div class="checkbox-container">
+      <input
+        #checkbox="ngModel"
+        [(ngModel)]="contactData.checkbox"
+        (click)="privacyPolicyValidation()"
+        type="checkbox"
+        id="contact-checkbox"
+        name="subscribe"
+        required
+      />
+      <label
+        for="contact-checkbox"
+        aria-label="Datenschutzerklaerung akzeptieren"
+      ></label>
+      <div class="checkbox-description">
+        <p>Ich habe die&nbsp;</p>
+        <p class="checkbox-link">Datenschutzerklaerung</p>
+        <p>&nbsp;gelesen und akzeptiere sie.</p>
+      </div>
+    </div>
+    @if (!privacyPolicyChecked && name.valid && email.valid && message.valid) {
+    <p class="field-hint field-hint-error">
+      Bitte stimme der Datenschutzerklaerung zu.
+    </p>
+    }
+
+    <!-- Submit -->
+    <div class="submit-button-container">
+      <p class="thank-you-text" [class.d-none]="!messageWasSent">
+        {{ messageSentText }}
+      </p>
+
+      <button
+        type="submit"
+        class="submit-button"
+        [class.submit-button-activated]="
+          name.valid && email.valid && message.valid && privacyPolicyChecked
+        "
+        [disabled]="
+          !(name.valid && email.valid && message.valid && privacyPolicyChecked)
+        "
+      >
+        {{ sendeMessageButtonContent }}
+      </button>
+    </div>
+  </form>
+</div>
+
 <footer class="container-1440 footer-container">
   <p (click)="dataService.goToImprint()">Impressum</p>
   <p (click)="dataService.goToAGB()">AGB</p>

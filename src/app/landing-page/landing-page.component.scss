@@ -138,7 +138,7 @@
 
 @media (max-width: 900px) {
   .welcome-container {
-    padding-top: 56px;
+    padding-top: 56px !important;
   }
 
   .hero .hero__title {
@@ -164,5 +164,22 @@
 @media (max-width: 680px) {
   .hero .hero__visual {
     left: 48% !important;
+  }
+}
+
+@media (max-height: 1100px) {
+  .welcome-container {
+    padding-top: 90px;
+  }
+
+  .hero__title {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  .hero {
+    .hero__visual {
+      max-height: 600px;
+    }
   }
 }

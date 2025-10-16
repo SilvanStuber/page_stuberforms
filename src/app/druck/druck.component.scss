@@ -5,12 +5,25 @@
   height: 600px;
 }
 
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  height: calc(100vh - 300px);
+}
+
+.content-hero-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
 .hero-video {
   position: relative;
   overflow: hidden;
-  min-height: clamp(420px, 70vh, 900px);
+  min-height: clamp(420px, 70vh, 700px);
   color: #fff;
-
   .hero-video__media {
     position: absolute;
     inset: 0;
