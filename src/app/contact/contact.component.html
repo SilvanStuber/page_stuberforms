@@ -149,7 +149,12 @@
       ></label>
       <div class="checkbox-description">
         <p>Ich habe die&nbsp;</p>
-        <p class="checkbox-link">Datenschutzerklaerung</p>
+        <p
+          class="checkbox-link"
+          (click)="dataService.openExternal('https://stuberforms.ch/policy')"
+        >
+          Datenschutzerklaerung
+        </p>
         <p>&nbsp;gelesen und akzeptiere sie.</p>
       </div>
     </div>
