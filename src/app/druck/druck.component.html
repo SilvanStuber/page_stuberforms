@@ -50,11 +50,9 @@
   <p (click)="dataService.goToContact(); dataService.toggle()">Kontakt</p>
 </div>
 
+<!-- three-d-print.component.html -->
 <div class="content-druck-container">
-  <section
-    class="sf-sections container"
-    *ngIf="threeDPrintSections.length || threeDPrintSections.length as data"
-  >
+  <section class="sf-sections container" *ngIf="threeDPrintSections?.length">
     <article
       class="sf-section"
       *ngFor="let item of threeDPrintSections; let i = index"
@@ -89,6 +87,13 @@
       <div class="sf-copy">
         <h2 class="sf-title">{{ item.title }}</h2>
         <p class="sf-text">{{ item.text }}</p>
+
+        <!-- CTA nur wenn aktiviert -->
+        <div class="sf-cta" *ngIf="item.cta?.enabled">
+          <button type="button" class="sf-btn" (click)="item.cta?.action?.()">
+            {{ item.cta?.label || "Mehr" }}
+          </button>
+        </div>
       </div>
     </article>
   </section>

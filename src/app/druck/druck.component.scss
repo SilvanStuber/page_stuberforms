@@ -82,6 +82,57 @@
   color: #0d131c;
 }
 
+.sf-cta {
+  margin-top: clamp(12px, 1.6vw, 20px);
+}
+
+.sf-btn {
+  display: inline-block;
+  padding: 12px 18px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  color: #0d131c;
+  background: linear-gradient(180deg, #eef3f9 0%, #e5ebf3 100%);
+  border: 1px solid rgba(13, 19, 28, 0.06);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.3));
+  border-radius: 8px;
+
+  transition: background-color 0.2s ease, background 0.2s ease,
+    box-shadow 0.25s ease, transform 0.08s ease;
+
+  &:hover {
+    background: #f66658;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.3));
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6),
+      4px 4px 10px rgba(13, 19, 28, 0.18) inset;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #4c9aff;
+    outline-offset: 2px;
+  }
+
+  &.as-link {
+    text-decoration: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sf-btn {
+    transition: none;
+  }
+}
+
 @media (max-width: 900px) {
   .content-druck-container {
     margin-top: -80px !important;
