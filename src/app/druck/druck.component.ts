@@ -28,7 +28,7 @@ export class DruckComponent {
   threeDPrintSections: ThreeDPrintSection[] = [
     {
       title: 'Was ist FDM 3D Druck?',
-      text: '3D-Druck, auch additive Fertigung genannt, erstellt Bauteile Schicht für Schicht direkt aus einem digitalen 3D-Modell. Statt Material wegzunehmen wie beim Fräsen oder Bohren, wird nur dort aufgebaut, wo es gebraucht wird. So entstehen Prototypen, Einzelteile und kleine Serien schnell, präzise und mit hoher Wiederholgenauigkeit. Ob Gehäuse, Funktionsmuster oder Ersatzteil: Das Ergebnis basiert exakt auf Ihrem Modell, und die Schichthöhe kann je nach Anforderung feiner oder grober gewählt werden.',
+      text: '3D-Druck, auch additive Fertigung genannt, erstellt Bauteile Schicht für Schicht direkt aus einem digitalen 3D-Modell. Statt Material wegzunehmen wie beim Fräsen oder Bohren, wird nur dort aufgebaut, wo es gebraucht wird. So entstehen Prototypen, Einzelteile und kleine Serien schnell, präzise und mit hoher Wiederholgenauigkeit. Ob Gehäuse, Funktionsmuster oder Ersatzteil: Das Ergebnis basiert exakt auf Ihrem Modell, und die Schichthöhe kann je nach Anforderung feiner oder gröber gewählt werden.',
       mediaType: 'video',
       src: 'videos/hero.mp4',
       poster: 'videos/hero.mp4',
