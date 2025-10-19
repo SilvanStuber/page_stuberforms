@@ -109,12 +109,11 @@ export class ContactComponent implements OnInit, OnDestroy {
     return cleaned.slice(0, 254);
   }
 
-  // Newline-schonend, CRLF -> LF, Control-Chars raus
   private hardenMessage(v: string): string {
     const noTags = v.replace(/<[^>]*>/g, '');
     const normalized = noTags.replace(/\r\n?/g, '\n');
     const cleaned = normalized
-      .replace(/[^\S\n]+/g, ' ') // nur Spaces/Tabs zusammenfassen, \n behalten
+      .replace(/[^\S\n]+/g, ' ')
       .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, '');
     return cleaned.trim().slice(0, 5000);
   }

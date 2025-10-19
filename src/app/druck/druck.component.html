@@ -2,7 +2,7 @@
   <img
     (click)="dataService.goToHome()"
     class="logo-img"
-    src="logo-stuberforms.png"
+    src="img/logo-stuberforms.png"
     alt="STUBERFORMS Logo"
   />
 
@@ -50,29 +50,49 @@
   <p (click)="dataService.goToContact(); dataService.toggle()">Kontakt</p>
 </div>
 
-<section
-  id="content-3ddruck"
-  class="content-hero-video"
-  aria-label="Hero mit Video-Background"
->
-  <h1>Inhalt folgt ;)</h1>
-  <div class="hero-video__media">
-    <video
-      class="hero-video__video"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      poster="hero-poster.jpg"
-      aria-hidden="true"
+<div class="content-druck-container">
+  <section
+    class="sf-sections container"
+    *ngIf="threeDPrintSections.length || threeDPrintSections.length as data"
+  >
+    <article
+      class="sf-section"
+      *ngFor="let item of threeDPrintSections; let i = index"
+      [class.reverse]="i % 2 === 1"
     >
-      <source src="hero.webm" type="video/webm" />
-      <source src="hero.mp4" type="video/mp4" />
-      Dein Browser unterstützt das Video-Tag nicht.
-    </video>
-  </div>
-</section>
+      <div class="sf-media">
+        <ng-container [ngSwitch]="item.mediaType">
+          <img
+            *ngSwitchCase="'image'"
+            [src]="item.src"
+            [alt]="item.alt || item.title"
+            loading="lazy"
+          />
+          <video
+            *ngSwitchCase="'video'"
+            class="sf-video"
+            [poster]="item.poster || ''"
+            autoplay
+            muted
+            playsinline
+            loop
+            disablepictureinpicture
+            controlslist="nodownload noplaybackrate noremoteplayback nofullscreen"
+            aria-hidden="true"
+          >
+            <source [src]="item.src" type="video/mp4" />
+            Dein Browser unterstützt das Video-Format nicht.
+          </video>
+        </ng-container>
+      </div>
+
+      <div class="sf-copy">
+        <h2 class="sf-title">{{ item.title }}</h2>
+        <p class="sf-text">{{ item.text }}</p>
+      </div>
+    </article>
+  </section>
+</div>
 
 <footer class="container-1440 footer-container">
   <p (click)="dataService.goToImprint()">Impressum</p>

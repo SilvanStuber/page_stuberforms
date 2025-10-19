@@ -7,6 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { AgbComponent } from './agb/agb.component';
 import { PolicyComponent } from './policy/policy.component';
+import { PrintMaterialTypesComponent } from './print-material-types/print-material-types.component';
 
 export const routes: Routes = [
     { path: '', component: LandingPageComponent },
@@ -17,4 +18,5 @@ export const routes: Routes = [
     { path: 'imprint', component: ImprintComponent },
     { path: 'agb', component: AgbComponent },
     { path: 'policy', component: PolicyComponent },
+    { path: 'print-material-types', component: PrintMaterialTypesComponent },
 ];

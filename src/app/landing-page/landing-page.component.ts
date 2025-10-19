@@ -32,14 +32,14 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   ];
 
   private imageFiles: string[] = [
-    'hero-01-willkommen.png',
-    'hero-02-3d-it-services.png',
-    'hero-03-prototyp.png',
-    'hero-04-idee-zu-form.png',
-    'hero-05-landingpage.png',
-    'hero-06-windows-support.png',
-    'hero-07-beste-haende.png',
-    'hero-08-kostenvoranschlag.png'
+    'img/hero-01-willkommen.png',
+    'img/hero-02-3d-it-services.png',
+    'img/hero-03-prototyp.png',
+    'img/hero-04-idee-zu-form.png',
+    'img/hero-05-landingpage.png',
+    'img/hero-06-windows-support.png',
+    'img/hero-07-beste-haende.png',
+    'img/hero-08-kostenvoranschlag.png'
   ];
 
   // Geschwindigkeiten

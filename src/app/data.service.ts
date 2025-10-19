@@ -54,6 +54,10 @@ export class DataService {
     this.router.navigate(['/webdesign']);
   }
 
+  goToPrintMaterialTypes() {
+    this.router.navigate(['/print-material-types']);
+  }
+
   openExternal(url: string): void {
     if (!isPlatformBrowser(this.platformId)) return; // SSR-Schutz
 
