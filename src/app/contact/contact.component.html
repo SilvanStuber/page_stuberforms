@@ -173,6 +173,7 @@
       <button
         type="submit"
         class="submit-button"
+        [class.d-none]="messageWasSent"
         [class.submit-button-activated]="
           name.valid && email.valid && message.valid && privacyPolicyChecked
         "

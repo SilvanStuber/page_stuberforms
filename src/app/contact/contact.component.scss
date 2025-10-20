@@ -93,7 +93,7 @@
   font-weight: 900;
 }
 .field-hint-error {
-  color: var(--error);
+  color: #e53935 !important;
 }
 
 .checkbox-container {
@@ -127,9 +127,10 @@
     }
     .checkbox-link {
       cursor: pointer;
-      text-decoration: underline;
+      text-decoration: none;
+
       &:hover {
-        color: var(--hover);
+        color: #f66658;
       }
     }
   }
@@ -171,7 +172,7 @@
 }
 
 .thank-you-text {
-  color: var(--hover);
+  color: #06630b;
   font-weight: 900;
   font-size: clamp(14px, 1.4vw, 20px);
   margin: 0;
