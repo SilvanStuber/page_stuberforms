@@ -8,7 +8,6 @@
 
   <nav class="nav-links">
     <p (click)="dataService.goTo3dDruck()">3D Druck</p>
-    <p (click)="dataService.goToIt()">IT-Services</p>
     <p (click)="dataService.openExternal('https://dev.stuberforms.ch/')">
       Weblösungen
     </p>
@@ -32,16 +31,58 @@
   </nav>
 </header>
 
-<div class="content-container">
-  <h1>Inhalt folgt ;)</h1>
-</div>
+<section class="about container-1440">
+  <div class="about__grid">
+    <!-- Bild links -->
+    <figure class="about__media" aria-hidden="true">
+      <img
+        class="about__img"
+        src="img/silvan1.png"
+        alt="Porträt von Silvan Stuber"
+        decoding="async"
+        loading="lazy"
+      />
+    </figure>
+
+    <!-- Text rechts -->
+    <div class="about__content">
+      <h2>Über mich</h2>
+      <p>
+        Ich bin Silvan Stuber – Tüftler, Designer und Entwickler hinter
+        <strong>STUBERFORMS</strong>. Ich kombiniere präzisen
+        <strong>3D-Druck</strong> mit durchdachten <strong>Weblösungen</strong>,
+        damit Ideen schnell zu greifbaren Produkten und klaren digitalen
+        Erlebnissen werden.
+      </p>
+      <p>
+        Von Prototypen über Kleinserien bis zu sauberen Frontends: Ich arbeite
+        pragmatisch, transparent und mit Blick fürs Detail. Kurze Wege,
+        ehrliches Feedback und Ergebnisse, die man sieht und spürt.
+      </p>
+
+      <ul class="about__bullets" aria-label="Fokusbereiche">
+        <li>3D-Druck & Rapid Prototyping</li>
+        <li>CAD & fertigungsgerechtes Design</li>
+        <li>Web-Apps & Schnittstellen</li>
+        <li>UI/UX mit klarem Fokus auf Nutzen</li>
+      </ul>
+
+      <button
+        class="btn-primary"
+        type="button"
+        (click)="dataService.goToContact()"
+      >
+        Kontakt aufnehmen
+      </button>
+    </div>
+  </div>
+</section>
 
 <div
   class="mobile-menu-container"
   [class.open]="dataService.isMenuOpen && dataService.open"
 >
   <p (click)="dataService.goTo3dDruck(); dataService.toggle()">3D Druck</p>
-  <p (click)="dataService.goToIt(); dataService.toggle()">IT-Services</p>
   <p
     (click)="
       dataService.openExternal('https://dev.stuberforms.ch/');

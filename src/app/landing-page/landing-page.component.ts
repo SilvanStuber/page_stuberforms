@@ -22,7 +22,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
 
   private phrases: string[] = [
     'Herzlich willkommen!',
-    '3D-Druck & IT-Services.',
+    '3D-Druck & Weblösungen.',
     '3D-Druck: Lassen Sie Ihren Prototypen drucken.',
     'Wir bringen Ihre Idee von der Zeichnung in eine anfassbare Form.',
     'Wir bauen die passende Landingpage für Ihr Angebot.',

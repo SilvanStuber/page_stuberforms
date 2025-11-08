@@ -8,7 +8,6 @@
 
   <nav class="nav-links">
     <p (click)="dataService.goTo3dDruck()">3D Druck</p>
-    <p (click)="dataService.goToIt()">IT-Services</p>
     <p (click)="dataService.openExternal('https://dev.stuberforms.ch/')">
       Weblösungen
     </p>
@@ -37,7 +36,6 @@
   [class.open]="dataService.isMenuOpen && dataService.open"
 >
   <p (click)="dataService.goTo3dDruck(); dataService.toggle()">3D Druck</p>
-  <p (click)="dataService.goToIt(); dataService.toggle()">IT-Services</p>
   <p
     (click)="
       dataService.openExternal('https://dev.stuberforms.ch/');
@@ -102,38 +100,6 @@
       <span class="tile__label">3D&nbsp;Druck</span>
     </button>
 
-    <!-- IT Services -->
-    <button class="tile" type="button" (click)="dataService.goToIt()">
-      <span class="tile__icon" aria-hidden="true">
-        <svg class="icon" viewBox="0 0 24 24">
-          <g
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.6"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="12" cy="12" r="3" />
-            <path
-              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 
-            2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 
-            1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 
-            1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06
-            a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 
-            2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 
-            0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06
-            a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 
-            2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 
-            0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06
-            a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 
-            1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
-            />
-          </g>
-        </svg>
-      </span>
-      <span class="tile__label">IT-Services</span>
-    </button>
-
     <!-- Weblösungen -->
     <button
       class="tile"
@@ -159,6 +125,28 @@
         </svg>
       </span>
       <span class="tile__label">Weblösungen</span>
+    </button>
+
+    <!-- Über uns -->
+    <button class="tile" type="button" (click)="dataService.goToIt()">
+      <span class="tile__icon" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="Über uns">
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="9" cy="8" r="3" />
+            <path d="M3.5 18c0-3.2 3.7-5.5 5.5-5.5S14.5 14.8 14.5 18" />
+            <circle cx="16.5" cy="9.5" r="2.5" />
+            <path d="M13 18c0-2.4 2.5-4 4.5-4 1 0 2 .2 2.8.8" />
+            <path d="M4 21h16" />
+          </g>
+        </svg>
+      </span>
+      <span class="tile__label">Über uns</span>
     </button>
 
     <!-- Kontakt -->
