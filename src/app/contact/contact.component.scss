@@ -105,18 +105,18 @@
     position: absolute;
   }
   label {
-    background: url(../../../public/img/checkbox.png) no-repeat center/cover;
+    background: url(../../assets/img/checkbox.png) no-repeat center/cover;
     height: 24px;
     width: 24px;
     cursor: pointer;
     transition: transform 0.15s ease;
     &:hover {
-      background-image: url(../../../public/img/checkbox-hover.png);
+      background-image: url(../../assets/img/checkbox-hover.png);
       transform: scale(1.05);
     }
   }
   input[type="checkbox"]:checked + label {
-    background-image: url(../../../public/img/checkbox-checked.png);
+    background-image: url(../../assets/img/checkbox-checked.png);
   }
   .checkbox-description {
     p {
