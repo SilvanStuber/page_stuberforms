@@ -11,7 +11,7 @@
     <p (click)="dataService.openExternal('https://dev.stuberforms.ch/')">
       Weblösungen
     </p>
-    <p (click)="dataService.goToAbout()">Über uns</p>
+    <p (click)="dataService.goToAbout()">Über mich</p>
     <p (click)="dataService.goToContact()">Kontakt</p>
   </nav>
 
@@ -44,7 +44,7 @@
   >
     Weblösungen
   </p>
-  <p (click)="dataService.goToAbout(); dataService.toggle()">Über uns</p>
+  <p (click)="dataService.goToAbout(); dataService.toggle()">Über mich</p>
   <p (click)="dataService.goToContact(); dataService.toggle()">Kontakt</p>
 </div>
 
@@ -127,10 +127,10 @@
       <span class="tile__label">Weblösungen</span>
     </button>
 
-    <!-- Über uns -->
-    <button class="tile" type="button" (click)="dataService.goToIt()">
+    <!-- Über mich -->
+    <button class="tile" type="button" (click)="dataService.goToAbout()">
       <span class="tile__icon" aria-hidden="true">
-        <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="Über uns">
+        <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="Über mich">
           <g
             fill="none"
             stroke="currentColor"
@@ -146,7 +146,7 @@
           </g>
         </svg>
       </span>
-      <span class="tile__label">Über uns</span>
+      <span class="tile__label">Über mich</span>
     </button>
 
     <!-- Kontakt -->
